@@ -159,23 +159,23 @@ html
             margin-top: 10px;
         }
 
-        .photo-item {
-            aspect-ratio: 4 / 3;
-            background-color: #eaeef3;
-            border: 2px dashed #b8c9da;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #6a7b8c;
-            font-size: 1rem;
-            text-align: center;
-            transition: all 0.25s ease;
-            cursor: default;
-            padding: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-        }
+ .photo-item {
+    aspect-ratio: 4/3;
+    background-color: #eaeef3;
+    border-radius: 10px;
+    overflow: hidden;  /* Обрезает фото по углам */
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Заполняет весь блок */
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);  /* Увеличение при наведении */
+}
 
         .photo-item:hover {
             background-color: #dfe8f0;
@@ -295,28 +295,20 @@ html
             </section>
 
             <!-- Галерея: 4 фотографии -->
-            <section class="photo-gallery">
-                <div class="photo-item">
-                    <div class="icon">📷</div>
-                    <span>Фото 1</span>
-                    <span class="placeholder-note" style="color: #8a9aa8;">(вставьте изображение)</span>
-                </div>
-                <div class="photo-item">
-                    <div class="icon">📷</div>
-                    <span>Фото 2</span>
-                    <span class="placeholder-note" style="color: #8a9aa8;">(вставьте изображение)</span>
-                </div>
-                <div class="photo-item">
-                    <div class="icon">📷</div>
-                    <span>Фото 3</span>
-                    <span class="placeholder-note" style="color: #8a9aa8;">(вставьте изображение)</span>
-                </div>
-                <div class="photo-item">
-                    <div class="icon">📷</div>
-                    <span>Фото 4</span>
-                    <span class="placeholder-note" style="color: #8a9aa8;">(вставьте изображение)</span>
-                </div>
-            </section>
+      <section class="photo-gallery">
+    <div class="photo-item">
+        <img src="photo1.jpeg" alt="Фото 1">
+    </div>
+    <div class="photo-item">
+        <img src="photo2.jpeg" alt="Фото 2">
+    </div>
+    <div class="photo-item">
+        <img src="photo3.jpeg" alt="Фото 3">
+    </div>
+    <div class="photo-item">
+        <img src="photo4.jpeg" alt="Фото 4">
+    </div>
+</section>
 
         </main>
 
